@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <left>
+      <Pane prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Spinner fx:id="spnHour" layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="60.0" />
+            <Spinner fx:id="spnYear" layoutX="227.0" layoutY="15.0" prefHeight="23.0" prefWidth="75.0" />
+            <ToggleButton fx:id="tgbOFF" layoutX="332.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#tgbOFF_clicked" text="OFF" />
+            <Button fx:id="btnGetTime" layoutX="320.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#btnGetTime_clicked" text="Get time" />
+            <Spinner fx:id="spnMinute" layoutX="84.0" layoutY="15.0" prefHeight="23.0" prefWidth="60.0" />
+            <Label fx:id="lblWorkTime" layoutX="22.0" layoutY="58.0" text="Work time" />
+            <Label fx:id="lblLearningTime" layoutX="22.0" layoutY="82.0" text="Learning time" />
+            <Label fx:id="lblInaction" layoutX="23.0" layoutY="131.0" text="Inaction" />
+            <Label fx:id="lblPastime" layoutX="22.0" layoutY="106.0" text="Pastime" />
+            <TextField fx:id="txtWorkTime" layoutX="120.0" layoutY="55.0" prefHeight="23.0" prefWidth="70.0" />
+            <TextField fx:id="txtLearningTime" layoutX="120.0" layoutY="80.0" prefHeight="23.0" prefWidth="70.0" />
+            <TextField fx:id="txtPastime" layoutX="120.0" layoutY="104.0" prefHeight="23.0" prefWidth="70.0" />
+            <TextField fx:id="txtInaction" layoutX="120.0" layoutY="128.0" prefHeight="23.0" prefWidth="70.0" />
+            <Spinner fx:id="spnSecond" layoutX="155.0" layoutY="14.0" prefHeight="23.0" prefWidth="60.0" />
+            <ToggleButton layoutX="203.0" layoutY="54.0" mnemonicParsing="false" text="OFF" />
+            <ToggleButton layoutX="203.0" layoutY="80.0" mnemonicParsing="false" text="OFF" />
+            <ToggleButton layoutX="203.0" layoutY="105.0" mnemonicParsing="false" text="OFF" />
+            <ToggleButton layoutX="203.0" layoutY="130.0" mnemonicParsing="false" text="OFF" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
