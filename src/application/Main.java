@@ -1,9 +1,13 @@
 package application;
 	
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,6 +21,7 @@ public class Main extends Application {
 	
 	BorderPane root;
 	Scene scene;
+//	SampleController controller;
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -40,6 +45,19 @@ public class Main extends Application {
 			primaryStage.show();
 			
 			System.out.println("Aplikacja uruchomiona");
+			
+			
+			Timeline timeTrigger = new Timeline(new KeyFrame(Duration.seconds(1), ae-> sysTick_1s_handler()));
+			timeTrigger.setCycleCount(Timeline.INDEFINITE);
+			timeTrigger.play();
+	}
+
+
+	private Object sysTick_1s_handler() {
+		// TODO Auto-generated method stub
+//		SampleController.textFieldUpdate(); // ciagle jest problem z static!!!
+		System.out.println("Licznik dziala!");
+		return null;
 	}
 	
 }

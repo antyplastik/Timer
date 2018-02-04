@@ -1,36 +1,25 @@
 package application;
 
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Calendar;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
+
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 
 public class SampleController {
 	
+	private static SystemTime time = new SystemTime();
+	
+	
 	@FXML ToggleButton tgbOFF;
 	private boolean tgbOFF_state = false;
 	
 	@FXML Button btnGetTime;
-	
-	@FXML Spinner spnHour;
-	@FXML Spinner spnMinute;
-	@FXML Spinner spnSecond;
-	@FXML Spinner spnYear;
-	
+
+	@FXML TextField txtMain;
 	@FXML TextField txtWorkTime;
 	@FXML TextField txtLearningTime;
 	@FXML TextField txtPastime;
@@ -54,15 +43,46 @@ public class SampleController {
 	
 	@FXML private void btnGetTime_clicked (MouseEvent event) {
 		System.out.println("button Get time dziala");
-//		System.out.println(System.currentTimeMillis());
-
-
-		System.out.println(LocalDateTime.now());
+		
+		
+//		System.out.println(time.getTime());
+		time.getTime();
+		txtMain.setText(time.year+" "+time.month+" "+time.day+" "+time.hour+":"+time.minute+":"+time.second);
+//		txtMain.setText("Hello");
 		
 	}
 	
 
-	
-	
-	
+	public void textFieldUpdate() {
+		setMainTime();
+//		setWorkTime();
+//		setLearningTime();
+//		setInactionTime();
+//		setPastime();
 	}
+	
+	
+	public void setMainTime() {
+		time.getTime();
+		txtMain.setText(time.year+" "+time.month+" "+time.day+" "+time.hour+":"+time.minute+":"+time.second);
+//		System.out.println(time.getTime());
+	}
+
+	public static void setWorkTime() {
+		
+	}
+	
+	public static void setLearningTime() {
+		
+	}
+	
+	public static void setInactionTime() {
+		
+	}
+	
+	public static void setPastime() {
+		
+	}
+	
+	
+}
