@@ -16,6 +16,16 @@ public class SampleController {
 	
 	@FXML ToggleButton tgbOFF;
 	private boolean tgbOFF_state = false;
+	@FXML ToggleButton tgbWorkTime;
+	private boolean tgbWorkTime_state = false;
+	@FXML ToggleButton tgbLearningTime;
+	private boolean tgbLearningTime_state = false;
+	@FXML ToggleButton tgbPastime;
+	private boolean tgbPastime_state = false;
+	@FXML ToggleButton tgbInaction;
+	private boolean tgbInaction_state = false;
+	
+//	@FXML tglTimerButtonGroup;
 	
 	@FXML Button btnGetTime;
 
@@ -39,6 +49,55 @@ public class SampleController {
 		}
 		
 		System.out.println("toggle OFF dziala!" + " stan: " + tgbOFF_state);
+	}
+	
+	@FXML private void tgbWorkTime_clicked (MouseEvent event) {
+		if (tgbWorkTime_state == false) {
+			tgbWorkTime.setText("ON");
+			tgbWorkTime.setStyle("-fx-text-fill: red");
+			tgbWorkTime_state = true;
+		}
+		else{
+			tgbWorkTime.setText("OFF");
+			tgbWorkTime.setStyle("-fx-text-fill: black");
+			tgbWorkTime_state = false;
+		}
+	}
+	@FXML private void tgbLearningTime_clicked (MouseEvent event) {
+		if (tgbLearningTime_state == false) {
+			tgbLearningTime.setText("ON");
+			tgbLearningTime.setStyle("-fx-text-fill: red");
+			tgbLearningTime_state = true;
+		}
+		else{
+			tgbLearningTime.setText("OFF");
+			tgbLearningTime.setStyle("-fx-text-fill: black");
+			tgbLearningTime_state = false;
+		}
+	}
+	@FXML private void tgbPastime_clicked (MouseEvent event) {
+		if (tgbPastime_state == false) {
+			tgbPastime.setText("ON");
+			tgbPastime.setStyle("-fx-text-fill: red");
+			tgbPastime_state = true;
+		}
+		else{
+			tgbPastime.setText("OFF");
+			tgbPastime.setStyle("-fx-text-fill: black");
+			tgbPastime_state = false;
+		}
+	}
+	@FXML private void tgbInaction_clicked (MouseEvent event) {
+		if (tgbInaction_state == false) {
+			tgbInaction.setText("ON");
+			tgbInaction.setStyle("-fx-text-fill: red");
+			tgbInaction_state = true;
+		}
+		else{
+			tgbInaction.setText("OFF");
+			tgbInaction.setStyle("-fx-text-fill: black");
+			tgbInaction_state = false;
+		}
 	}
 	
 	@FXML private void btnGetTime_clicked (MouseEvent event) {
