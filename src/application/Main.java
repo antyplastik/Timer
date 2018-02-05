@@ -58,7 +58,7 @@ public class Main extends Application {
 	private Object sysTick_1s_handler() {
 		// TODO Auto-generated method stub
 		SampleController controller = new SampleController();// ciagle jest problem z static!!!
-//		controller.textFieldUpdate();
+		controller.textFieldUpdate();
 		
 		System.out.println("Licznik dziala!");
 		return null;

@@ -13,7 +13,6 @@ public class SampleController {
 	
 	private static SystemTime time = new SystemTime();
 	
-	
 	@FXML ToggleButton tgbOFF;
 	private boolean tgbOFF_state = false;
 	@FXML ToggleButton tgbWorkTime;
@@ -105,14 +104,16 @@ public class SampleController {
 		
 		
 //		System.out.println(time.getTime());
-		time.getTime();
-		txtMain.setText(time.year+" "+time.month+" "+time.day+" "+time.hour+":"+time.minute+":"+time.second);
-//		txtMain.setText("Hello");
-		textFieldUpdate();
+//		time.getTime();
+//		txtMain.setText(time.year+" "+time.month+" "+time.day+" "+time.hour+":"+time.minute+":"+time.second);
+		txtMain.setText(time.str_year+"/"+time.str_month+"/"+time.str_day+" "+time.str_hour+":"+time.str_minute+":"+time.str_second);
+//		textFieldUpdate();
 	}
 	
 
 	public void textFieldUpdate() {
+		time.getTime();
+//		correctionNumberString();
 		setMainTime();
 //		setWorkTime();
 //		setLearningTime();
@@ -122,8 +123,7 @@ public class SampleController {
 	
 	
 	public void setMainTime() {
-		time.getTime();
-		txtMain.setText(time.year+" "+time.month+" "+time.day+" "+time.hour+":"+time.minute+":"+time.second);
+//		txtMain.setText(time.year+" "+time.month+" "+time.day+" "+time.hour+":"+time.minute+":"+time.second);
 //		System.out.println(time.getTime());
 	}
 
