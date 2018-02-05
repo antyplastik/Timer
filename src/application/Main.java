@@ -45,17 +45,21 @@ public class Main extends Application {
 			primaryStage.show();
 			
 			System.out.println("Aplikacja uruchomiona");
-			
-			
-			Timeline timeTrigger = new Timeline(new KeyFrame(Duration.seconds(1), ae-> sysTick_1s_handler()));
-			timeTrigger.setCycleCount(Timeline.INDEFINITE);
-			timeTrigger.play();
+			sysTick_1s_init();
 	}
 
-
+	private Object sysTick_1s_init() {
+		Timeline timeTrigger = new Timeline(new KeyFrame(Duration.seconds(1), ae-> sysTick_1s_handler()));
+		timeTrigger.setCycleCount(Timeline.INDEFINITE);
+		timeTrigger.play();
+		return null;
+	}
+	
 	private Object sysTick_1s_handler() {
 		// TODO Auto-generated method stub
-//		SampleController.textFieldUpdate(); // ciagle jest problem z static!!!
+		SampleController controller = new SampleController();// ciagle jest problem z static!!!
+//		controller.textFieldUpdate();
+		
 		System.out.println("Licznik dziala!");
 		return null;
 	}

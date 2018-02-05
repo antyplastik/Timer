@@ -108,7 +108,7 @@ public class SampleController {
 		time.getTime();
 		txtMain.setText(time.year+" "+time.month+" "+time.day+" "+time.hour+":"+time.minute+":"+time.second);
 //		txtMain.setText("Hello");
-		
+		textFieldUpdate();
 	}
 	
 
