@@ -1,9 +1,6 @@
 package application;
 
-
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,7 +42,7 @@ public class SampleController {
 	@FXML TextField txtInaction;
 	
 	@SuppressWarnings("unchecked")
-	@FXML private void tglTimerButtonGroupAction(ActionEvent action) { // <---- NIE DZIALA bo z nie jest wywolywana!!!
+	@FXML private void tglTimerButtonGroupAction(ActionEvent action) { // <---- NIE DZIALA bo nie jest wywolywana!!!
 		System.out.println("Wcisniety ktorys przycisk z grupy");
 		
 		tglTimerButtonGroup.selectedToggleProperty().addListener((javafx.beans.value.ChangeListener<? super Toggle>) new ChangeListener() {
@@ -53,9 +50,9 @@ public class SampleController {
 			private Toggle t1;
 
 			@Override
-			public void stateChanged(ChangeEvent arg0) {
-				t1 = null;
+			public void changed(ObservableValue arg0, Object arg1, Object arg2) {
 				// TODO Auto-generated method stub
+				t1 = null;
 				ToggleButton tglPrzycisk = (ToggleButton)t1.getToggleGroup().getSelectedToggle();
 				System.out.println("Wcisniety"+tglPrzycisk.getText());
 			}
@@ -137,16 +134,14 @@ public class SampleController {
 	@FXML private void btnGetTime_clicked (MouseEvent event) {
 		System.out.println("button Get time dziala");
 		
-		
-//		System.out.println(time.getTime());
-//		time.getTime();
+		ReadAndWriteToFile file = new ReadAndWriteToFile();
+		System.out.println(file.OSdetection());
+
 		txtMain.setText(time.getTime());
-//		txtMain.setText(time.str_year+"/"+time.str_month+"/"+time.str_day+" "+time.str_hour+":"+time.str_minute+":"+time.str_second);
-//		textFieldUpdate();
 	}
 	
 
-	private void check_tglTimerButtonGroup_state() {
+	private String check_tglTimerButtonGroup_state() {
 		
 //		if (tgbOFF_state == false)
 //			timerWorkStatus = "OFF";
@@ -172,6 +167,7 @@ public class SampleController {
 			timerWorkStatus = "OFF";
 		
 		System.out.println(timerWorkStatus);
+		return timerWorkStatus;
 	}
 	
 	

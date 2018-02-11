@@ -7,20 +7,25 @@ public class ReadAndWriteToFile {
 	String fileLocation = null;
 	String detectedOS = null;
 	
-	ReadAndWriteToFile(String file_location) {
+	ReadAndWriteToFile (String file_location) {
 		this.fileLocation = file_location;
 	}
 	
-	void OSdetection () {
-		detectedOS = System.getProperty("os.name");
+	ReadAndWriteToFile () {};
+	
+	
+	String OSdetection () {
+		detectedOS = System.getProperty("os.name").toString();
 		
-		if (detectedOS == "Windows") {
+		if (detectedOS == "Windows 7") {
 			
 		}
 		
 		else if (detectedOS == "Linux") {
 			
 		}
+		
+		return detectedOS;
 	}
 	
 	String fileLocation () {
