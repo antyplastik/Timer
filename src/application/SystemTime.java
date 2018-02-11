@@ -17,7 +17,7 @@ public class SystemTime {
 		correctionNumberString();
 	}
 	
-	private void correctionNumberString() {
+	private String correctionNumberString() {
 //		String tmp_string = new String();
 				
 		if (day >= 10)
@@ -49,13 +49,15 @@ public class SystemTime {
 			str_second = Integer.toString(second);
 		else
 			str_second = "0" + second;
+		
+		return time_and_date = str_year +"/"+ str_month +"/"+ str_day +" "+ str_hour +":"+ str_minute +":"+ str_second;
 	}
 	
 	public String getTime() {
 		
 //		LocalDateTime.format(DateTimeFormatter RFC_1123_DATE_TIME);
 		LocalDateTime localTimeAndDate = LocalDateTime.now();
-		time_and_date = localTimeAndDate.toString();
+//		time_and_date = localTimeAndDate.toString();
 		
 		year =  localTimeAndDate.getYear();
 		month = localTimeAndDate.getMonthValue();
@@ -65,6 +67,7 @@ public class SystemTime {
 		minute = localTimeAndDate.getMinute();
 		second = localTimeAndDate.getSecond();
 
+		correctionNumberString();
 //		System.out.println(year+" "+month+" "+day+" "+hour+":"+minute+":"+second);
 		
 		return time_and_date;
