@@ -60,74 +60,27 @@ public class SampleController {
 	}
 	
 	@FXML private void tgbOFF_clicked (MouseEvent event) {
-		if (tgbOFF_state == false) {
-			tgbOFF.setText("ON");
-			tgbOFF.setStyle("-fx-text-fill: red");
-			tgbOFF_state = true;
-		}
-		else{
-			tgbOFF.setText("OFF");
-			tgbOFF.setStyle("-fx-text-fill: black");
-			tgbOFF_state = false;
-		}
-		
-		System.out.println("toggle OFF dziala!" + " stan: " + tgbOFF_state);
+		tgbOFF_stateChange();
 		check_tglTimerButtonGroup_state();
 	}
 	
 	@FXML private void tgbWorkTime_clicked (MouseEvent event) {
-		if (tgbWorkTime_state == false) {
-			tgbWorkTime.setText("ON");
-			tgbWorkTime.setStyle("-fx-text-fill: red");
-			tgbWorkTime_state = true;
-		}
-		else{
-			tgbWorkTime.setText("OFF");
-			tgbWorkTime.setStyle("-fx-text-fill: black");
-			tgbWorkTime_state = false;
-		}
+		tgbWorkTime_stateChange();
 		check_tglTimerButtonGroup_state();
 	}
 	
 	@FXML private void tgbLearningTime_clicked (MouseEvent event) {
-		if (tgbLearningTime_state == false) {
-			tgbLearningTime.setText("ON");
-			tgbLearningTime.setStyle("-fx-text-fill: red");
-			tgbLearningTime_state = true;
-		}
-		else{
-			tgbLearningTime.setText("OFF");
-			tgbLearningTime.setStyle("-fx-text-fill: black");
-			tgbLearningTime_state = false;
-		}
+		tgbLearningTime_stateChange();
 		check_tglTimerButtonGroup_state();
 	}
 	
 	@FXML private void tgbPastime_clicked (MouseEvent event) {
-		if (tgbPastime_state == false) {
-			tgbPastime.setText("ON");
-			tgbPastime.setStyle("-fx-text-fill: red");
-			tgbPastime_state = true;
-		}
-		else{
-			tgbPastime.setText("OFF");
-			tgbPastime.setStyle("-fx-text-fill: black");
-			tgbPastime_state = false;
-		}
+		tgbPastime_stateChange();
 		check_tglTimerButtonGroup_state();
 	}
 	
 	@FXML private void tgbInaction_clicked (MouseEvent event) {
-		if (tgbInaction_state == false) {
-			tgbInaction.setText("ON");
-			tgbInaction.setStyle("-fx-text-fill: red");
-			tgbInaction_state = true;
-		}
-		else{
-			tgbInaction.setText("OFF");
-			tgbInaction.setStyle("-fx-text-fill: black");
-			tgbInaction_state = false;
-		}
+		tgbInaction_stateChange();
 		check_tglTimerButtonGroup_state();
 	}
 	
@@ -140,6 +93,83 @@ public class SampleController {
 		txtMain.setText(time.getTime());
 	}
 	
+	
+// --------------- Zmiana stanu przelacznikow -----------------
+	private boolean tgbOFF_stateChange() {
+		if (tgbOFF_state == false) {
+			tgbOFF.setText("ON");
+			tgbOFF.setStyle("-fx-text-fill: red");
+			tgbOFF_state = true;
+		}
+		else{
+			tgbOFF.setText("OFF");
+			tgbOFF.setStyle("-fx-text-fill: black");
+			tgbOFF_state = false;
+		}
+		
+		System.out.println("toggle OFF dziala!" + " stan: " + tgbOFF_state);
+		return tgbOFF_state;
+	}
+	private boolean tgbWorkTime_stateChange() {
+		if (tgbWorkTime_state == false) {
+			tgbWorkTime.setText("ON");
+			tgbWorkTime.setStyle("-fx-text-fill: red");
+			tgbWorkTime_state = true;
+		}
+		else{
+			tgbWorkTime.setText("OFF");
+			tgbWorkTime.setStyle("-fx-text-fill: black");
+			tgbWorkTime_state = false;
+		}
+		
+		System.out.println("toggle WorkTime dziala!" + " stan: " + tgbWorkTime_state);
+		return tgbWorkTime_state;
+	}
+	private boolean tgbLearningTime_stateChange() {
+		if (tgbLearningTime_state == false) {
+			tgbLearningTime.setText("ON");
+			tgbLearningTime.setStyle("-fx-text-fill: red");
+			tgbLearningTime_state = true;
+		}
+		else{
+			tgbLearningTime.setText("OFF");
+			tgbLearningTime.setStyle("-fx-text-fill: black");
+			tgbLearningTime_state = false;
+		}
+		
+		System.out.println("toggle LearningTime dziala!" + " stan: " + tgbLearningTime_state);
+		return tgbLearningTime_state;
+	}
+	private boolean tgbPastime_stateChange() {
+		if (tgbPastime_state == false) {
+			tgbPastime.setText("ON");
+			tgbPastime.setStyle("-fx-text-fill: red");
+			tgbPastime_state = true;
+		}
+		else{
+			tgbPastime.setText("OFF");
+			tgbPastime.setStyle("-fx-text-fill: black");
+			tgbPastime_state = false;
+		}
+		
+		System.out.println("toggle Pastime dziala!" + " stan: " + tgbPastime_state);
+		return tgbPastime_state;
+	}
+	private boolean tgbInaction_stateChange() {
+		if (tgbInaction_state == false) {
+			tgbInaction.setText("ON");
+			tgbInaction.setStyle("-fx-text-fill: red");
+			tgbInaction_state = true;
+		}
+		else{
+			tgbInaction.setText("OFF");
+			tgbInaction.setStyle("-fx-text-fill: black");
+			tgbInaction_state = false;
+		}
+		System.out.println("toggle Inaction dziala!" + " stan: " + tgbInaction_state);
+		return tgbInaction_state;
+	}
+	
 
 	private String check_tglTimerButtonGroup_state() {
 		
@@ -148,19 +178,34 @@ public class SampleController {
 		
 		if (tgbWorkTime_state == true && tgbOFF_state == true) {
 			timerWorkStatus = "WorkTime ON";
-			
+//			tgbWorkTime_stateChange();
+			tgbLearningTime_stateChange();
+			tgbPastime_stateChange();
+			tgbInaction_stateChange();
 		}
 
-		else if (tgbLearningTime_state == true && tgbOFF_state == true) {
+		if (tgbLearningTime_state == true && tgbOFF_state == true) {
 			timerWorkStatus = "LearningTime ON";
+			tgbWorkTime_stateChange();
+//			tgbLearningTime_stateChange();
+			tgbPastime_stateChange();
+			tgbInaction_stateChange();
 		}
 		
-		else if (tgbPastime_state == true && tgbOFF_state == true) {
+		if (tgbPastime_state == true && tgbOFF_state == true) {
 			timerWorkStatus = "Pastime ON";
+			tgbWorkTime_stateChange();
+			tgbLearningTime_stateChange();
+//			tgbPastime_stateChange();
+			tgbInaction_stateChange();
 		}
 		
-		else if (tgbInaction_state == true && tgbOFF_state == true) {
+		if (tgbInaction_state == true && tgbOFF_state == true) {
 			timerWorkStatus = "Inaction ON";
+			tgbWorkTime_stateChange();
+			tgbLearningTime_stateChange();
+			tgbPastime_stateChange();
+//			tgbInaction_stateChange();
 		}
 		
 		else
@@ -170,6 +215,8 @@ public class SampleController {
 		return timerWorkStatus;
 	}
 	
+	
+
 	
 	public void textFieldUpdate() {
 		time.getTime();

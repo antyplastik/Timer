@@ -6,6 +6,7 @@ public class ReadAndWriteToFile {
 	
 	String fileLocation = null;
 	String detectedOS = null;
+
 	
 	ReadAndWriteToFile (String file_location) {
 		this.fileLocation = file_location;
@@ -28,9 +29,8 @@ public class ReadAndWriteToFile {
 		return detectedOS;
 	}
 	
-	String fileLocation () {
-		
-		
+	
+	String getFileLocation () {
 		return fileLocation;
 	}
 	

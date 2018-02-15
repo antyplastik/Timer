@@ -50,7 +50,7 @@ public class Main extends Application {
 		// TODO Auto-generated method stub
 		controller.textFieldUpdate();
 		
-		System.out.println("Licznik dziala!");
+//		System.out.println("Licznik dziala!");
 		return null;
 	}
 	
